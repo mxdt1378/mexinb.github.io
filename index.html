@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA SA $ SA-MP游戏与数据平台 | 企业级资源中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #283593;
+            --accent-color: #3949ab;
+            --highlight-color: #5c6bc0;
+            --text-color: #e8eaf6;
+            --text-secondary: #c5cae9;
+            --card-bg: rgba(26, 35, 126, 0.85);
+            --card-border: rgba(92, 107, 192, 0.5);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background: #0a0e2e url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQV8lpdfhhoqu_4wNv4QtQzJBk7e6XMAACnCYAAtmRsFdcN10J5K9M_zgE.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 46, 0.85);
+            z-index: -1;
+        }
+        
+        /* 头部导航 */
+        .header {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.95) 0%, rgba(39, 50, 163, 0.95) 100%);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--highlight-color);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, #8c9eff, #536dfe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(92, 107, 192, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background: var(--highlight-color);
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--highlight-color);
+        }
+        
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .section-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8c9eff;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+        
+        /* 游戏与MOD部分 */
+        .platform-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .platform-card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(39, 50, 163, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(92, 107, 192, 0.4);
+            transition: var(--transition);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--highlight-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .platform-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .platform-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .platform-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .platform-title h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: linear-gradient(to right, var(--accent-color), var(--highlight-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn.secondary {
+            background: rgba(92, 107, 192, 0.3);
+            border: 1px solid var(--highlight-color);
+        }
+        
+        .warning-box {
+            background: rgba(244, 67, 54, 0.15);
+            border-left: 5px solid #f44336;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box h4 {
+            color: #ff8a80;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 车辆列表部分 */
+        .vehicle-image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .vehicle-image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--highlight-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .vehicle-list-container {
+            max-height: 500px;
+            overflow-y: auto;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(39, 50, 163, 0.3);
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+        
+        .vehicle-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .vehicle-item {
+            background: rgba(26, 35, 126, 0.5);
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--highlight-color);
+            transition: var(--transition);
+        }
+        
+        .vehicle-item:hover {
+            background: rgba(92, 107, 192, 0.3);
+        }
+        
+        .vehicle-id {
+            font-weight: 700;
+            color: #8c9eff;
+            margin-right: 15px;
+            min-width: 40px;
+        }
+        
+        .vehicle-name {
+            flex: 1;
+        }
+        
+        /* 音乐栏目部分 */
+        .music-section {
+            background: linear-gradient(135deg, rgba(63, 81, 181, 0.8), rgba(103, 58, 183, 0.8));
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(140, 158, 255, 0.6);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+        
+        .music-player-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .music-controls {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .music-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .music-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .music-info {
+            text-align: center;
+            max-width: 600px;
+            margin-top: 10px;
+        }
+        
+        /* 数据教程部分 */
+        .data-tutorial {
+            background: rgba(39, 50, 163, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .data-example {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            border: 1px solid var(--card-border);
+        }
+        
+        .data-parameter {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(26, 35, 126, 0.5);
+            border-radius: 8px;
+            border-left: 4px solid var(--highlight-color);
+        }
+        
+        .param-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--highlight-color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+        
+        /* 赞助信息部分 */
+        .sponsor-section {
+            text-align: center;
+            padding: 30px;
+            margin: 40px 0;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.7), rgba(39, 50, 163, 0.7));
+            border-radius: 15px;
+            border: 1px solid var(--highlight-color);
+        }
+        
+        .sponsor-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-title {
+            font-size: 24px;
+            color: #8c9eff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .sponsor-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #8c9eff;
+        }
+        
+        /* 免责声明 */
+        .disclaimer {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+        
+        .disclaimer h3 {
+            color: #ff8a80;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.95) 0%, rgba(39, 50, 163, 0.95) 100%);
+            padding: 40px 5% 20px;
+            margin-top: 60px;
+            border-top: 2px solid var(--highlight-color);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #8c9eff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: #8c9eff;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(92, 107, 192, 0.3);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .platform-section {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .vehicle-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .music-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .music-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(26, 35, 126, 0.3);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--highlight-color);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8c9eff;
+        }
+        
+        /* 分隔线 */
+        .separator {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--highlight-color), transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZI1peKQ4R3mSEfSxESNOb35flNKAWAACuSMAAnG8wVfoF5g6cWVquDgE.jpg" alt="企业平台图标">
+            </div>
+            <div class="logo-text">
+                <h1>GTA SA $ SA-MP社区平台</h1>
+                <p>专业游戏资源与数据管理中心</p>
+            </div>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#games" class="nav-link active"><i class="fas fa-download"></i> 游戏与MOD</a>
+            <a href="#music" class="nav-link"><i class="fas fa-music"></i> 游戏内音乐</a>
+            <a href="#data" class="nav-link"><i class="fas fa-database"></i> 数据更改</a>
+            <a href="#tutorial" class="nav-link"><i class="fas fa-graduation-cap"></i> 数据教程</a>
+            <a href="#disclaimer" class="nav-link"><i class="fas fa-exclamation-triangle"></i> 免责声明</a>
+        </nav>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 栏目一：游戏与MOD -->
+        <section id="games" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZItpeKLHvuIgQDQyHlnIbs3WXUhq_AACtyMAAnG8wVfygtAHRbG4ijgE.jpg" alt="游戏与MOD图标">
+                </div>
+                <div>
+                    <h2 class="section-title">游戏与MOD下载中心</h2>
+                    <p class="section-subtitle">专业级的游戏资源部署与MOD安装平台</p>
+                </div>
+            </div>
+            
+            <!-- 电脑版SA-MP部署 -->
+            <div class="platform-card">
+                <div class="platform-title">
+                    <div class="platform-icon">
+                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGppeJhDyYUWq4BEVIo7qEqktoWngwACdyMAAnG8wVdgOjlhshO4VjgE.jpg" alt="PC版SA-MP">
+                    </div>
+                    <h3>电脑版SA-MP部署</h3>
+                </div>
+                
+                <div class="button-grid">
+                    <a href="http://www.zycdjz.com/zsadlsd.exe" class="download-btn">
+                        <i class="fas fa-download"></i> SA游戏本体(600MB)
+                    </a>
+                    <a href="http://www.zycdjz.com/samp-install.exe" class="download-btn secondary">
+                        <i class="fas fa-network-wired"></i> SA-MP联机数据包
+                    </a>
+                </div>
+                
+                <div class="separator" style="margin: 25px 0;"></div>
+                
+                <div>
+                    <h4 style="margin-bottom: 15px; color: #8c9eff;">MOD安装资源</h4>
+                    <div class="button-grid">
+                        <a href="https://www.gtainside.com/en/news.php" class="download-btn">
+                            <i class="fas fa-external-link-alt"></i> GTAInside
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 手机版Rn·SAMP -->
+            <div class="platform-card">
+                <div class="platform-title">
+                    <div class="platform-icon">
+                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGhpeJejvnjNsQt5X9hkaZuD0-TzUAACdSMAAnG8wVelEwmVVNg7sjgE.jpg" alt="Rn·SAMP">
+                    </div>
+                    <h3>手机版Rn·SAMP</h3>
+                </div>
+                
+                <div class="button-grid">
+                    <a href="https://samp.fun/" class="download-btn">
+                        <i class="fas fa-mobile-alt"></i> Rn·SAMP
+                    </a>
+                    <a href="https://imtt.dd.qq.com/sjy.00022/sjy.00004/16891/apk/FA8CB4BDD2DDC232893F7E11D49BA3F5.apk?fsname=%E7%AC%AC%E4%B8%89%E6%96%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E5%8C%85.apk" class="download-btn secondary">
+                        <i class="fas fa-download"></i> GTSAOOL
+                    </a>
+                    <a href="https://11.shuajizhijiaptdown.yaooya.cn/soft/Q4/TXDTool.apk?tk=zkTZlF2NhRWMxQWZwYWZ3kzM4cjNxcTM0MmNjdDNzADfu9Gf0VmbuEWaqlGa6lmahVHazx3N1cjN5QTO2cTM" class="download-btn secondary">
+                        <i class="fas fa-tools"></i> TXD Tool
+                    </a>
+                </div>
+                
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-circle"></i> 重要注意事项</h4>
+                    <p>GTSAOOL内部已有ImgTool可手动替换也可自动替换。使用TXD Tool的时候需要勾选无障碍。如果无法导入请给GTSAOOL打开文件和文档权限。</p>
+                </div>
+            </div>
+            
+            <!-- 服务器警告 -->
+            <div class="warning-box" style="margin-top: 30px;">
+                <h4><i class="fas fa-ban"></i> 服务器使用规定</h4>
+                <p>服务器中禁止使用一切违规插件扰乱秩序，否则您的账号和IP地址可能会被封禁。请遵守服务器规则，共同维护良好的游戏环境。</p>
+            </div>
+        </section>
+        
+        <!-- 分隔线 -->
+        <div class="separator"></div>
+        
+        <!-- 新增音乐栏目 -->
+        <section id="music" class="music-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZKVpeKpT5GAAAbxL4gjOLP88Sg1PO70AAvgjAAJxvMFXqMfOus7T4UA4BA.jpeg" alt="游戏音乐图标">
+                </div>
+                <div>
+                    <h2 class="section-title">游戏内音乐资源</h2>
+                    <p class="section-subtitle">高质量游戏音乐与音频转换工具</p>
+                </div>
+            </div>
+            
+            <div class="music-player-container">
+                <div class="music-info">
+                    <p>在GTA SA $ SA-MP游戏体验中，音乐是不可或缺的一部分。我们为您提供高质量的游戏音乐资源和音频转换工具，让您可以自定义游戏内的音频体验。</p>
+                </div>
+                
+                <div class="music-controls">
+                    <a href="https://www.myfreemp3.com.cn/" class="music-btn" target="_blank">
+                        <i class="fas fa-headphones"></i> 音乐链接
+                    </a>
+                    <a href="https://r-g.top/" class="music-btn" target="_blank">
+                        <i class="fas fa-exchange-alt"></i> MP3转链接
+                    </a>
+                </div>
+                
+                <div class="music-info">
+                    <p><strong>使用提示：</strong> 您可以使用这些工具找到并转换您喜欢的音乐，然后将它们添加到游戏的自定义电台中，打造个性化的游戏音乐体验。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 分隔线 -->
+        <div class="separator"></div>
+        
+        <!-- 栏目二：数据更改 -->
+        <section id="data" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZIxpeKLb5wIFXNZZuFpDMuO7LMzqKAACuCMAAnG8wVd9AAFKKsai5h84BA.jpg" alt="车辆数据图标">
+                </div>
+                <div>
+                    <h2 class="section-title">GTA SA $ SA-MP 车辆数据系统</h2>
+                    <p class="section-subtitle">完整的车辆列表与数据参数调整中心</p>
+                </div>
+            </div>
+            
+            <!-- 车辆列表图 -->
+            <h3 style="margin-bottom: 15px; color: #8c9eff;">GTA SA车辆列表图</h3>
+            <div class="vehicle-image-container">
+                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZC9peJD2qVC6nN8DS-KVMKIq5fvxagACKSMAAnG8wVfjnhyD3dbJ1zgE.jpg" alt="GTA SA车辆列表">
+            </div>
+            
+            <!-- 车辆列表 -->
+            <h3 style="margin-top: 40px; margin-bottom: 15px; color: #8c9eff;">GTA SA $ SA-MP车辆列表名单</h3>
+            <div class="vehicle-list-container">
+                <div class="vehicle-list" id="vehicleList">
+                    <!-- 车辆列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- 数据更改教程 -->
+        <section id="tutorial" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZJFpeKWorqrp2EiSITrNcXMpIVwsZwACvSMAAnG8wVfaK_8yKVd_ZDgE.jpg" alt="数据教程图标">
+                </div>
+                <div>
+                    <h2 class="section-title">车辆数据更改教程</h2>
+                    <p class="section-subtitle">专业级车辆参数调整指南</p>
+                </div>
+            </div>
+            
+            <div class="data-tutorial">
+                <h3 style="margin-bottom: 20px; color: #8c9eff;">示例数据参数：</h3>
+                <div class="data-example">
+                    （1）manana  （2）2700.0     （3）5250.0     （4）5.0     （5）0.0     0.0     -0.600     （6）75     （7）0.40     （8）0.70     （9）0.55     （10）5     （11）999     （12）999999999999999     （13）99.0     （14）4     （15）D     （16）15.5     （17）1.01     （18）0     （19）42     （20）1.1     （21）0.20     （22）0.01     （23）0.300     （24）-0.03    （25） 0.19     0.3     0.99     0.60     175000
+                </div>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: #8c9eff;">参数详细说明：</h3>
+                
+                <div class="data-parameter">
+                    <span class="param-number">1</span>
+                    <strong>manana</strong> - 车辆代码
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">2</span>
+                    <strong>车身碰撞质量</strong> - 影响车辆碰撞时的物理表现
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">3</span>
+                    <strong>车身的惯性</strong> - 数值越大越不容易转圈
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">4</span>
+                    <strong>阻力系数</strong> - 有关于中后段加速，数值越小极速越快
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">5</span>
+                    <strong>车身重心</strong> - 调整车辆的重心位置，影响操控
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">7</span>
+                    <strong>车辆抓地力的倍率</strong> - 这个数值可以提高车辆转向的灵敏度，漂移时可更快完成变向
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">8</span>
+                    <strong>车辆过弯时的抓地力</strong> - 数值越小车辆过弯越容易打滑，相反数值越大过弯时则不会打滑（看个人手感调整）
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">9</span>
+                    <strong>车辆的前后轮的抓地调整</strong> - 数值越接近于0，前轮抓地越差，过弯时由于前轮抓地小于后轮，则会发生推头撞墙等。数值越接近于1前轮抓地力越好，后轮越差，过弯时可实现甩尾漂移等操作
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">10</span>
+                    <strong>车辆档位限制</strong> - 5为最高五档，1为最高一档。注意：最高只有五档，超过5档游戏会闪退
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">11</span>
+                    <strong>车辆最高时速</strong> - 事实上无论你调多高，最高时速都是210km/h
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">14</span>
+                    <strong>驱动方式</strong> - 4为四轮驱动，R为后轮驱动，F为前轮驱动
+                </div>
+                
+                <div class="data-parameter">
+                    <span class="param-number">19</span>
+                    <strong>转向角度</strong> - 数值越大，车轮的转向角度则越大（数值大有助于漂移时实现360度旋转）
+                </div>
+            </div>
+        </section>
+        
+        <!-- 赞助信息部分 -->
+        <section class="sponsor-section">
+            <div class="sponsor-content">
+                <h3 class="sponsor-title">
+                    <i class="fas fa-heart" style="color:#ff4081;"></i> 
+                    特别鸣谢
+                </h3>
+                <div class="sponsor-text">
+                    本教程由 <strong style="color:#8c9eff;">Matt Mosgan</strong> 赞助，<strong style="color:#8c9eff;">Mexi Hottest</strong> 编写网页。
+                </div>
+                <p style="margin-top: 20px; color: var(--text-secondary); font-style: italic;">
+                    提前感谢所有为GTA SA $ SA-MP社区做出贡献的玩家！
+                </p>
+            </div>
+        </section>
+        
+        <!-- 免责声明 -->
+        <section id="disclaimer" class="disclaimer">
+            <h3><i class="fas fa-exclamation-triangle"></i> 免责声明</h3>
+            <p>本网站仅提供游戏资源与数据参考信息。服务器禁止修改数据的情况下请勿擅自修改车辆参数，如因违规操作导致账号或IP被封禁，与本网页无关。请用户自觉遵守游戏规则，合理使用本平台提供的信息。</p>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>企业平台</h3>
+                <p>专业级的GTA SA $ SA-MP游戏资源与数据管理中心，提供最全面的游戏部署、MOD安装和车辆数据调整方案。</p> 
+                <p>如有人有优质内容想上传至网页请向站主Mexi Hottest反馈我们将整合后采用并感谢为社区做贡献的玩家😊</p>
+                <div style="margin-top: 20px; display: flex; gap: 15px;">
+                    <a href="#" style="color: #8c9eff; font-size: 20px;"><i class="fab fa-discord"></i></a>
+                    <a href="#" style="color: #8c9eff; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+                    <a href="#" style="color: #8c9eff; font-size: 20px;"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul class="footer-links">
+                    <li><a href="#games"><i class="fas fa-chevron-right"></i> 游戏与MOD</a></li>
+                    <li><a href="#music"><i class="fas fa-chevron-right"></i> 游戏内音乐</a></li>
+                    <li><a href="#data"><i class="fas fa-chevron-right"></i> 车辆数据</a></li>
+                    <li><a href="#tutorial"><i class="fas fa-chevron-right"></i> 数据教程</a></li>
+                    <li><a href="#disclaimer"><i class="fas fa-chevron-right"></i> 免责声明</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>资源支持</h3>
+                <ul class="footer-links">
+                    <li><a href="https://www.gtainside.com/"><i class="fas fa-external-link-alt"></i> GTAInside</a></li>
+                    <li><a href="https://samp.fun/"><i class="fas fa-external-link-alt"></i> Rn·SAMP</a></li>
+                    <li><a href="http://www.zycdjz.com/"><i class="fas fa-external-link-alt"></i> 游戏资源站</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 GTA SA 企业平台. 本网站与Rockstar Games无关，所有游戏资源版权归其各自所有者所有。</p>
+            <p>最后更新:2025-01-27 平台版本:V1.0</p>
+        </div>
+    </footer>
+
+    <script>
+        // 车辆数据
+        const vehicles = [
+            "400 Landstalker", "401 Bravura", "402 Buffalo", "403 Linerunner", "404 Perenniel",
+            "405 Sentinel", "406 Dumper（特殊车辆，无法正常驾驶）", "407 Firetruck", "408 Trashmaster",
+            "409 Stretch", "410 Manana", "411 Infernus", "412 Voodoo", "413 Pony", "414 Mule",
+            "415 Cheetah", "416 Ambulance", "417 Leviathan（直升机）", "418 Moonbeam", "419 Esperanto",
+            "420 Taxi", "421 Washington", "422 FBI Rancher", "423 Mr. Whoopee（冰淇淋车）", "424 BF Injection",
+            "425 Hunter（军用直升机）", "426 Premier", "427 Enforcer（警用卡车）", "428 Securicar", "429 Banshee",
+            "430 Predator（水上船只）", "431 Bus", "432 Rhino（坦克）", "433 Barracks OL（军用卡车）", "434 Hotknife",
+            "435 Articulated Trailer（货柜拖头，前段）", "436 Previon", "437 Coach", "438 Cabbie", "439 Stallion",
+            "440 Rumpo", "441 RC Bandit（遥控车）", "442 Romero（灵车）", "443 Packer", "444 Monster","445 Admiral", "446 Patriot", "447 Sea Sparrow（水上直升机）", "448 Pizza Boy（摩托车）", "449 Tram（有轨电车）",
+            "450 Articulated Trailer（货柜拖头，后段）", "451 Turismo", "452 Speeder（快艇）", "453 Reefer（渔船）", "454 Tropic（游艇）",
+            "455 Flatbed", "456 Yankee", "457 Caddy（高尔夫球车）", "458 Solair", "459 Berkley's RC Van（RC商店货车，任务相关）",
+            "460 Skimmer（水上飞机）", "461 PCJ-600（摩托车）", "462 Faggio（摩托车）", "463 Freeway（摩托车）", "464 RC Baron（遥控飞机）",
+            "465 RC Raider（遥控直升机）", "466 Glendale", "467 Oceanic", "468 Sanchez（摩托车）", "469 Sparrow（直升机）",
+            "470 Patriot（军用越野车，与446重复，实际为'Patriot'变体）", "471 Quad（四轮摩托车）", "472 Coastguard（快艇）", "473 Dinghy（小艇）", "474 Hermes",
+            "475 Sabre", "476 Rustler（二战战斗机）", "477 ZR-350", "478 Walton", "479 Regina",
+            "480 Comet", "481 BMX（自行车）", "482 Burrito", "483 Camper", "484 Marquis（帆船）",
+            "485 Baggage（机场行李车）", "486 Dozer（推土机）", "487 Maverick（直升机）", "488 News Chopper（新闻直升机）", "489 Rancher",
+            "490 FBI Rancher（与422类似，涂装不同）", "491 Virgo", "492 Greenwood", "493 Jetmax（快艇）", "494 Hotring Racer（赛道用车）",
+            "495 Sandking", "496 Blista Compact", "497 Police Maverick（警用直升机）", "498 Boxville", "499 Benson",
+            "500 Mesa", "501 RC Goblin（遥控怪物车）", "502 Hotring Racer A（赛道变体）", "503 Hotring Racer B（赛道变体）", "504 Bloodring Banger（毁灭竞技场车辆）",
+            "505 Rancher（变体）", "506 Super GT", "507 Elegant", "508 Journey（房车）", "509 Bike（自行车）",
+            "510 Mountain Bike（山地自行车）", "511 Beagle（双翼飞机）", "512 Cropduster（农用飞机）", "513 Stuntplane（特技飞机）", "514 Tanker（油罐车）",
+            "515 Roadtrain（货运卡车）", "516 Nebula", "517 Majestic", "518 Buccaneer", "519 Shamal（喷气式客机）",
+            "520 Hydra（垂直起降战斗机）", "521 FCR-900（摩托车）", "522 NRG-500（摩托车）", "523 HPV1000（警用摩托车）", "524 Cement Truck（水泥车）",
+            "525 Tow Truck（拖车）", "526 Fortune", "527 Cadrona", "528 FBI Truck（防爆车）", "529 Willard",
+            "530 Forklift（叉车）", "531 Tractor", "532 Combine Harvester（收割机）", "533 Feltzer", "534 Remington",
+            "535 Slamvan", "536 Blade", "537 Freight（火车头）", "538 Streak（火车车厢）", "539 Vortex（气垫船）",
+            "540 Vincent", "541 Bullet", "542 Clover", "543 Sadler", "544 Firetruck LA（消防车，云梯可操作）",
+            "545 Hustler", "546 Intruder", "547 Primo", "548 Cargobob（军用运输直升机）", "549 Tampa",
+            "550 Sunrise", "551 Merit", "552 Utility Van", "553 Nevada（双翼货运飞机）", "554 Yosemite",
+            "555 Windsor", "556 Monster A（'Monster'变体）", "557 Monster B（'Monster'变体）", "558 Uranus", "559 Jester",
+            "560 Sultan", "561 Stratum", "562 Elegy", "563 Raindance（直升机）", "564 RC Tiger（遥控坦克）",
+            "565 Flash", "566 Tahoma", "567 Savanna", "568 Bandito（越野 buggy）", "569 Freight Flat（火车平板车厢）",
+            "570 Streak Carrier（火车货柜车厢）", "571 Kart（卡丁车）", "572 Mower（割草机）", "573 Duneride（沙滩车）", "574 Sweeper（街道清扫车）",
+            "575 Broadway", "576 Tornado", "577 AT-400（大型客机）", "578 DFT-30（货运卡车）", "579 Huntley",
+            "580 Stafford", "581 BF-400（摩托车）", "582 Newsvan（新闻车）", "583 Tug（机场拖车）", "584 Petrol Tanker（油罐拖车）",
+            "585 Roadtrain（变体）", "586 Nebula（变体）", "587 Majestic（变体）", "588 Buccaneer（变体）", "589 Shamal（变体）",
+            "592 Andromada（大型运输机）", "593 Dodo（小型水上飞机）", "595 Launch（快艇）", "596 Police Car (LSPD)（警车）", "597 Police Car (SFPD)（旧金山警车）",
+            "598 Police Car (LVPD)（拉斯维加斯警车）", "599 Ranger（警用越野车）", "600 Picador", "601 S.W.A.T.（防暴装甲车）", "602 Alpha",
+            "603 Phoenix", "604 Glendale（变体）", "605 Sadler（变体）", "606 Sunrite（行李拖车，机场用）"
+        ];
+
+        // 动态生成车辆列表
+        function generateVehicleList() {
+            const container = document.getElementById('vehicleList');
+            container.innerHTML = '';
+            
+            vehicles.forEach(vehicle => {
+                const parts = vehicle.split(' ');
+                const id = parts[0];
+                const name = parts.slice(1).join(' ');
+                
+                const item = document.createElement('div');
+                item.className = 'vehicle-item';
+                item.innerHTML = `
+                    <div class="vehicle-id">${id}</div>
+                    <div class="vehicle-name">${name}</div>
+                `;
+                
+                container.appendChild(item);
+            });
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 生成车辆列表
+            generateVehicleList();
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // 更新活动导航链接
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // 移动端菜单
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if(mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+                
+                // 调整移动端菜单显示
+                window.addEventListener('resize', function() {
+                    if(window.innerWidth > 992) {
+                        navLinks.style.display = 'flex';
+                    } else {
+                        navLinks.style.display = 'none';
+                    }
+                });
+            }
+            
+            // 初始化显示
+            if(window.innerWidth <= 992) {
+                navLinks.style.display = 'none';
+            }
+            
+            // 添加动态效果到下载按钮
+            document.querySelectorAll('.download-btn, .music-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    // 如果不是外部链接，阻止默认行为
+                    if(this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                    }
+                    
+                    // 添加点击动画
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
