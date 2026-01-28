@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA SA $ SA-MP游戏与数据平台 | 企业级资源中心</title>
+    <title>GTA SA ★ SA-MP游戏与数据平台 | 企业级资源中心</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -24,6 +23,14 @@
             --card-border: rgba(92, 107, 192, 0.5);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --transition: all 0.3s ease;
+            --gold-color: #FFD700;
+            --gold-glow: rgba(255, 215, 0, 0.5);
+            --server-color: #4CAF50;
+            --server-glow: rgba(76, 175, 80, 0.3);
+            --contact-color: #FF9800;
+            --contact-glow: rgba(255, 152, 0, 0.3);
+            --developer-color: #9C27B0;
+            --developer-glow: rgba(156, 39, 176, 0.3);
         }
         
         body {
@@ -46,7 +53,153 @@
             z-index: -1;
         }
         
-        /* 头部导航 */
+        /* 动态背景特效 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        <html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA SA ★ SA-MP游戏与数据平台 | 企业级资源中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #283593;
+            --accent-color: #3949ab;
+            --highlight-color: #5c6bc0;
+            --text-color: #e8eaf6;
+            --text-secondary: #c5cae9;
+            --card-bg: rgba(26, 35, 126, 0.85);
+            --card-border: rgba(92, 107, 192, 0.5);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+            --gold-color: #FFD700;
+            --gold-glow: rgba(255, 215, 0, 0.5);
+            --server-color: #4CAF50;
+            --server-glow: rgba(76, 175, 80, 0.3);
+            --contact-color: #FF9800;
+            --contact-glow: rgba(255, 152, 0, 0.3);
+            --developer-color: #9C27B0;
+            --developer-glow: rgba(156, 39, 176, 0.3);
+        }
+        
+        body {
+            background: #0a0e2e url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQV8lpdfhhoqu_4wNv4QtQzJBk7e6XMAACnCYAAtmRsFdcN10J5K9M_zgE.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 46, 0.85);
+            z-index: -1;
+        }
+        
+        /* 动态背景特效 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(92, 107, 192, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        .particle.gold {
+            background: rgba(255, 215, 0, 0.6);
+            animation: floatGold 12s infinite linear;
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        }
+        
+        .particle.green {
+            background: rgba(76, 175, 80, 0.6);
+            animation: floatGreen 10s infinite linear;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+        }
+        
+        @keyframes floatGold {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(-100px); opacity: 0; }
+        }
+        
+        @keyframes floatGreen {
+            0% { transform: translateY(100vh) translateX(100px); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(-100px); opacity: 0; }
+        }
+        
+        /* 光标追踪特效 */
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(92, 107, 192, 0.3) 0%, rgba(92, 107, 192, 0) 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: screen;
+        }
+        
+        .cursor-follower::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0) 70%);
+            animation: pulseCursor 2s infinite;
+        }
+        
+        @keyframes pulseCursor {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.5); opacity: 0.3; }
+        }
+        
         .header {
             background: linear-gradient(135deg, rgba(26, 35, 126, 0.95) 0%, rgba(39, 50, 163, 0.95) 100%);
             padding: 20px 5%;
@@ -58,6 +211,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--highlight-color);
+            backdrop-filter: blur(10px);
         }
         
         .logo {
@@ -74,12 +228,49 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: pulseGold 3s infinite alternate;
+            position: relative;
+        }
+        
+        @keyframes pulseGold {
+            0% { 
+                transform: scale(1); 
+                box-shadow: 0 0 10px rgba(140, 158, 255, 0.3),
+                            0 0 20px rgba(255, 215, 0, 0.1);
+            }
+            100% { 
+                transform: scale(1.05); 
+                box-shadow: 0 0 20px rgba(140, 158, 255, 0.6),
+                            0 0 40px rgba(255, 215, 0, 0.3);
+            }
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 215, 0, 0.3), 
+                transparent);
+            border-radius: 12px;
+            z-index: -1;
+            animation: rotateBorder 3s linear infinite;
+        }
+        
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .logo-icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 8px;
         }
         
         .logo-text h1 {
@@ -89,6 +280,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-shadow: 0 2px 10px rgba(83, 109, 254, 0.3);
         }
         
         .logo-text p {
@@ -113,6 +305,23 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(140, 158, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .nav-link:hover::before {
+            left: 100%;
         }
         
         .nav-link:hover {
@@ -122,9 +331,9 @@
         
         .nav-link.active {
             background: var(--highlight-color);
+            box-shadow: 0 0 15px rgba(92, 107, 192, 0.5);
         }
         
-        /* 主要内容区域 */
         .main-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -139,6 +348,31 @@
             border: 1px solid var(--card-border);
             box-shadow: var(--shadow);
             backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .section:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            
         }
         
         .section-header {
@@ -156,6 +390,15 @@
             overflow: hidden;
             margin-right: 20px;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-icon.straight {
+            transform: none !important;
+        }
+        
+        .section:hover .section-icon {
+            transform: rotate(5deg) scale(1.1);
         }
         
         .section-icon img {
@@ -168,6 +411,23 @@
             font-size: 28px;
             font-weight: 700;
             color: #8c9eff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8c9eff, transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .section:hover .section-title::after {
+            width: 100%;
         }
         
         .section-subtitle {
@@ -175,8 +435,7 @@
             color: var(--text-secondary);
             margin-top: 5px;
         }
-        
-        /* 游戏与MOD部分 */
+
         .platform-section {
             display: flex;
             flex-wrap: wrap;
@@ -192,10 +451,28 @@
             padding: 25px;
             border: 1px solid rgba(92, 107, 192, 0.4);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(140, 158, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .platform-card:hover::before {
+            opacity: 1;
         }
         
         .platform-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
             border-color: var(--highlight-color);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
@@ -213,6 +490,11 @@
             border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-card:hover .platform-icon {
+            transform: rotate(10deg);
         }
         
         .platform-icon img {
@@ -247,16 +529,275 @@
             text-align: center;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .download-btn:hover::after {
+            left: 100%;
         }
         
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .download-btn.secondary {
             background: rgba(92, 107, 192, 0.3);
             border: 1px solid var(--highlight-color);
+        }
+        
+        .download-btn.official {
+            background: linear-gradient(to right, var(--server-color), #2E7D32);
+            border: 1px solid rgba(76, 175, 80, 0.6);
+            animation: officialPulse 2s infinite alternate;
+        }
+        
+        @keyframes officialPulse {
+            0% { box-shadow: 0 0 10px rgba(76, 175, 80, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.6); }
+        }
+        
+        /* 新增：直连服务器功能 */
+        .server-direct-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(26, 35, 126, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .server-direct-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--server-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .server-direct-section:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .server-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        
+        .server-title h4 {
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        
+        .server-title i {
+            color: #4CAF50;
+            font-size: 20px;
+        }
+        
+        .server-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: end;
+        }
+        
+        @media (max-width: 768px) {
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .server-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .server-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .server-input {
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 14px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .server-input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .server-input::placeholder {
+            color: rgba(197, 202, 233, 0.5);
+        }
+        
+        .server-launch-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            height: 44px;
+            position: relative;
+            overflow: hidden;
+            animation: launchPulse 2s infinite alternate;
+        }
+        
+        @keyframes launchPulse {
+            0% { 
+                box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+                transform: scale(1.02);
+            }
+        }
+        
+        .server-launch-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .server-launch-btn:hover::before {
+            left: 100%;
+        }
+        
+        .server-launch-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+            animation: none;
+        }
+        
+        .server-status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .server-status.connecting {
+            background: rgba(33, 150, 243, 0.2);
+            border: 1px solid rgba(33, 150, 243, 0.4);
+            color: #2196F3;
+            display: block;
+        }
+        
+        .server-status.connected {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            color: #4CAF50;
+            display: block;
+        }
+        
+        .server-status.error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.4);
+            color: #ff8a80;
+            display: block;
+        }
+        
+        .server-status .fa-spinner {
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .server-tutorial {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(26, 35, 126, 0.4);
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .server-tutorial h5 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .server-tutorial ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .server-tutorial li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        
+        .server-tutorial .note {
+            font-size: 12px;
+            color: #ff8a80;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(244, 67, 54, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid #f44336;
         }
         
         .warning-box {
@@ -265,6 +806,12 @@
             padding: 20px;
             margin-top: 25px;
             border-radius: 0 8px 8px 0;
+            animation: warningPulse 2s infinite;
+        }
+        
+        @keyframes warningPulse {
+            0%, 100% { box-shadow: 0 0 5px rgba(244, 67, 54, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(244, 67, 54, 0.5); }
         }
         
         .warning-box h4 {
@@ -275,10 +822,10 @@
             gap: 10px;
         }
         
-        /* 车辆列表部分 */
         .vehicle-image-container {
             text-align: center;
             margin: 30px 0;
+            position: relative;
         }
         
         .vehicle-image-container img {
@@ -286,6 +833,11 @@
             border-radius: 10px;
             border: 2px solid var(--highlight-color);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .vehicle-image-container:hover img {
+            transform: scale(1.02);
         }
         
         .vehicle-list-container {
@@ -296,6 +848,31 @@
             background: rgba(39, 50, 163, 0.3);
             border-radius: 10px;
             border: 1px solid var(--card-border);
+            position: relative;
+        }
+        
+        .vehicle-list-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to bottom, rgba(39, 50, 163, 0.8), transparent);
+            border-radius: 10px 10px 0 0;
+            z-index: 1;
+        }
+        
+        .vehicle-list-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to top, rgba(39, 50, 163, 0.8), transparent);
+            border-radius: 0 0 10px 10px;
+            z-index: 1;
         }
         
         .vehicle-list {
@@ -312,10 +889,29 @@
             align-items: center;
             border-left: 4px solid var(--highlight-color);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vehicle-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--highlight-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .vehicle-item:hover::before {
+            opacity: 1;
         }
         
         .vehicle-item:hover {
             background: rgba(92, 107, 192, 0.3);
+            transform: translateX(5px);
         }
         
         .vehicle-id {
@@ -323,13 +919,13 @@
             color: #8c9eff;
             margin-right: 15px;
             min-width: 40px;
+            text-shadow: 0 0 5px rgba(140, 158, 255, 0.5);
         }
         
         .vehicle-name {
             flex: 1;
         }
         
-        /* 音乐栏目部分 */
         .music-section {
             background: linear-gradient(135deg, rgba(63, 81, 181, 0.8), rgba(103, 58, 183, 0.8));
             border-radius: 15px;
@@ -338,6 +934,20 @@
             border: 1px solid rgba(140, 158, 255, 0.6);
             box-shadow: var(--shadow);
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(140, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(103, 58, 183, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         .music-player-container {
@@ -346,6 +956,8 @@
             align-items: center;
             gap: 25px;
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         .music-controls {
@@ -367,12 +979,30 @@
             font-weight: 600;
             transition: var(--transition);
             border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .music-btn:hover::before {
+            left: 100%;
         }
         
         .music-btn:hover {
             background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.05);
             border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .music-info {
@@ -381,12 +1011,23 @@
             margin-top: 10px;
         }
         
-        /* 数据教程部分 */
         .data-tutorial {
             background: rgba(39, 50, 163, 0.3);
             border-radius: 10px;
             padding: 25px;
             margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-tutorial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
         }
         
         .data-example {
@@ -398,6 +1039,17 @@
             overflow-x: auto;
             white-space: nowrap;
             border: 1px solid var(--card-border);
+            position: relative;
+        }
+        
+        .data-example::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--highlight-color);
         }
         
         .data-parameter {
@@ -406,6 +1058,12 @@
             background: rgba(26, 35, 126, 0.5);
             border-radius: 8px;
             border-left: 4px solid var(--highlight-color);
+            transition: var(--transition);
+        }
+        
+        .data-parameter:hover {
+            background: rgba(92, 107, 192, 0.3);
+            transform: translateX(5px);
         }
         
         .param-number {
@@ -418,50 +1076,292 @@
             line-height: 30px;
             margin-right: 10px;
             font-weight: 700;
+            transition: transform 0.3s ease;
         }
         
-        /* 赞助信息部分 */
-        .sponsor-section {
-            text-align: center;
-            padding: 30px;
-            margin: 40px 0;
-            background: linear-gradient(135deg, rgba(26, 35, 126, 0.7), rgba(39, 50, 163, 0.7));
+        .data-parameter:hover .param-number {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        /* 新增：开发者团队部分 - 更新头像特效 */
+        .team-section {
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.9), rgba(63, 81, 181, 0.9));
             border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
             border: 1px solid var(--highlight-color);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
         
-        .sponsor-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(140, 158, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(83, 109, 254, 0.1) 0%, transparent 50%);
+            opacity: 0.5;
         }
         
-        .sponsor-title {
-            font-size: 24px;
+        .team-title {
+            font-size: 32px;
             color: #8c9eff;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(140, 158, 255, 0.5);
         }
         
-        .sponsor-text {
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-member {
+            background: rgba(26, 35, 126, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(140, 158, 255, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .team-member:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--highlight-color);
+        }
+        
+        .member-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid #FFD700; /* 改为金色边框 */
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), /* 金色发光效果 */
+                        0 0 60px rgba(255, 215, 0, 0.5),
+                        inset 0 0 20px rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            position: relative;
+            animation: avatarGlowGold 2s infinite alternate; /* 金色闪烁动画 */
+        }
+        
+        @keyframes avatarGlowGold {
+            0% {
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                            0 0 60px rgba(255, 215, 0, 0.5),
+                            inset 0 0 20px rgba(255, 255, 255, 0.2);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 50px rgba(255, 215, 0, 1),
+                            0 0 100px rgba(255, 215, 0, 0.8),
+                            inset 0 0 30px rgba(255, 255, 255, 0.4);
+                transform: scale(1.05);
+            }
+        }
+        
+        .team-member:hover .member-avatar {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 1),
+                        0 0 120px rgba(255, 215, 0, 0.9),
+                        inset 0 0 40px rgba(255, 255, 255, 0.4);
+            animation: none;
+        }
+        
+        .member-avatar::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 215, 0, 0.8), /* 金色渐变 */
+                transparent, 
+                rgba(255, 215, 0, 0.8), /* 金色渐变 */
+                transparent);
+            z-index: -1;
+            animation: rotateAvatarBorder 3s linear infinite;
+        }
+        
+        @keyframes rotateAvatarBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-avatar img {
+            transform: scale(1.1);
+        }
+        
+        .member-name {
+            font-size: 24px;
+            color: #FFD700; /* 金色文字 */
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 2px 15px rgba(255, 215, 0, 0.7); /* 金色阴影 */
+        }
+        
+        .member-role {
             font-size: 18px;
-            line-height: 1.8;
-            color: var(--text-color);
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #8c9eff;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
         
-        /* 免责声明 */
+        .member-desc {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* 新增：赞助商列表部分 */
+        .sponsors-section {
+            background: linear-gradient(135deg, rgba(39, 50, 163, 0.8), rgba(63, 81, 181, 0.8));
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid rgba(140, 158, 255, 0.6);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sponsors-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 140, 0, 0.1) 0%, transparent 50%);
+        }
+        
+        .sponsors-title {
+            font-size: 32px;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sponsor-item {
+            background: rgba(26, 35, 126, 0.6);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sponsor-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .sponsor-item:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .sponsor-item:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        .sponsor-icon {
+            font-size: 48px;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .sponsor-name {
+            font-size: 22px;
+            color: #FFD700;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .sponsor-desc {
+            font-size: 14px;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+        
         .disclaimer {
             background: rgba(244, 67, 54, 0.1);
             border: 1px solid rgba(244, 67, 54, 0.3);
             border-radius: 10px;
             padding: 25px;
-            margin-top: 40px;
+            margin: 40px 0;
+            animation: disclaimerPulse 3s infinite alternate;
+        }
+        
+        @keyframes disclaimerPulse {
+            0% { box-shadow: 0 0 10px rgba(244, 67, 54, 0.1); }
+            100% { box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); }
         }
         
         .disclaimer h3 {
@@ -472,12 +1372,23 @@
             gap: 10px;
         }
         
-        /* 页脚 */
         .footer {
             background: linear-gradient(135deg, rgba(26, 35, 126, 0.95) 0%, rgba(39, 50, 163, 0.95) 100%);
             padding: 40px 5% 20px;
             margin-top: 60px;
             border-top: 2px solid var(--highlight-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--highlight-color), transparent);
         }
         
         .footer-content {
@@ -486,6 +1397,8 @@
             justify-content: space-between;
             gap: 40px;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-section {
@@ -497,6 +1410,108 @@
             font-size: 20px;
             margin-bottom: 20px;
             color: #8c9eff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--highlight-color);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-section:hover h3::after {
+            width: 100%;
+        }
+        
+        /* 新增：联系我们部分 */
+        .contact-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(26, 35, 126, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 152, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--contact-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .contact-section:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .contact-title {
+            font-size: 18px;
+            color: var(--contact-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-email {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(255, 152, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            animation: emailPulse 3s infinite alternate;
+        }
+        
+        @keyframes emailPulse {
+            0% { box-shadow: 0 0 5px rgba(255, 152, 0, 0.2); }
+            100% { box-shadow: 0 0 15px rgba(255, 152, 0, 0.4); }
+        }
+        
+        .contact-email:hover {
+            background: rgba(255, 152, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .contact-email i {
+            color: var(--contact-color);
+            font-size: 20px;
+        }
+        
+        .contact-email a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .contact-email a:hover {
+            color: var(--contact-color);
+        }
+        
+        .contact-note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid var(--contact-color);
         }
         
         .footer-links {
@@ -505,17 +1520,32 @@
         
         .footer-links li {
             margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-links li:hover::before {
+            transform: translateX(5px);
         }
         
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: var(--transition);
+            display: inline-block;
         }
-        
+
         .footer-links a:hover {
             color: #8c9eff;
-            padding-left: 5px;
+            transform: translateX(5px);
         }
         
         .copyright {
@@ -524,9 +1554,10 @@
             border-top: 1px solid rgba(92, 107, 192, 0.3);
             color: var(--text-secondary);
             font-size: 14px;
+            position: relative;
+            z-index: 1;
         }
         
-        /* 响应式设计 */
         @media (max-width: 992px) {
             .platform-section {
                 flex-direction: column;
@@ -543,6 +1574,15 @@
                 color: white;
                 font-size: 24px;
                 cursor: pointer;
+            }
+            
+            .team-grid,
+            .sponsors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .server-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -575,9 +1615,18 @@
                 max-width: 300px;
                 justify-content: center;
             }
+            
+            .team-section,
+            .sponsors-section {
+                padding: 25px;
+            }
+            
+            .member-avatar {
+                width: 120px;
+                height: 120px;
+            }
         }
         
-        /* 自定义滚动条 */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -590,29 +1639,210 @@
         ::-webkit-scrollbar-thumb {
             background: var(--highlight-color);
             border-radius: 10px;
+            transition: background 0.3s ease;
         }
         
         ::-webkit-scrollbar-thumb:hover {
             background: #8c9eff;
+            box-shadow: 0 0 10px rgba(140, 158, 255, 0.5);
         }
         
-        /* 分隔线 */
         .separator {
             height: 2px;
             background: linear-gradient(to right, transparent, var(--highlight-color), transparent);
             margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .separator::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            animation: separatorShine 3s infinite;
+        }
+        
+        @keyframes separatorShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* 新增：页面加载动画 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            flex-direction: column;
+        }
+        
+        .loader-content {
+            text-align: center;
+            position: relative;
+        }
+        
+        .loader-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            position: relative;
+            animation: logoPulse 3s infinite alternate;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+        
+        .loader-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        @keyframes logoPulse {
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); }
+            100% { transform: scale(1.05); box-shadow: 0 0 60px rgba(255, 215, 0, 0.8); }
+        }
+        
+        .loader-text {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        .rockstar-text {
+            color: var(--gold-color);
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px var(--gold-glow),
+                         0 0 40px var(--gold-glow),
+                         0 0 60px rgba(255, 215, 0, 0.5);
+            animation: rockstarGlow 2s infinite alternate;
+            font-family: 'Impact', sans-serif;
+            position: relative;
+        }
+        
+        .rockstar-text::before {
+            content: '★';
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-color);
+            font-size: 48px;
+            animation: starSpin 3s infinite linear;
+            text-shadow: 0 0 30px var(--gold-glow);
+        }
+        
+        .rockstar-text::after {
+            content: '★';
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-color);
+            font-size: 48px;
+            animation: starSpin 3s infinite linear reverse;
+            text-shadow: 0 0 30px var(--gold-glow);
+        }
+        
+        @keyframes starSpin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+        
+        @keyframes rockstarGlow {
+            0% { 
+                text-shadow: 0 0 20px var(--gold-glow),
+                             0 0 40px var(--gold-glow),
+                             0 0 60px rgba(255, 215, 0, 0.5);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 30px var(--gold-glow),
+                             0 0 60px var(--gold-glow),
+                             0 0 90px rgba(255, 215, 0, 0.8);
+                transform: scale(1.05);
+            }
+        }
+        
+        .loader-progress {
+            width: 300px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .loader-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, transparent, var(--gold-color), transparent);
+            animation: progressLoad 2s ease-in-out forwards;
+        }
+        
+        @keyframes progressLoad {
+            0% { width: 0; }
+            100% { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- 头部导航 -->
+    <!-- 页面加载动画 -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo" id="stage1Logo">
+                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZ-hpeb6vc26jUsJ6y3aNcHDdrjFRNwACaxwAAiZHyVfHTmQJY3lX5zgE.jpeg" alt="GTA SA Logo">
+            </div>
+            <div class="loader-text" id="stage1Text">Grand Theft Auto San Andreas</div>
+            
+            <div class="loader-logo" id="stage2Logo" style="display: none;">
+                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQaAVpecLPh_W8DmlGKJCafattpMV0agACkRwAAiZHyVfYtWRDK3tfAjgE.jpg" alt="Rockstar Games Logo">
+            </div>
+            <div class="rockstar-text" id="stage2Text" style="display: none;">Rockstar Games</div>
+            
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+    
+    <!-- 光标追踪特效 -->
+    <div class="cursor-follower" id="cursorFollower"></div>
+    
+    <!-- 动态粒子背景 -->
+    <div class="particles" id="particlesContainer"></div>
+    
     <header class="header">
         <div class="logo">
             <div class="logo-icon">
-                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZI1peKQ4R3mSEfSxESNOb35flNKAWAACuSMAAnG8wVfoF5g6cWVquDgE.jpg" alt="企业平台图标">
+                <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZ-hpeb6vc26jUsJ6y3aNcHDdrjFRNwACaxwAAiZHyVfHTmQJY3lX5zgE.jpeg" alt="企业平台图标">
             </div>
             <div class="logo-text">
-                <h1>GTA SA $ SA-MP社区平台</h1>
+                <h1>GTA SA ★ SA-MP社区平台</h1>
                 <p>专业游戏资源与数据管理中心</p>
             </div>
         </div>
@@ -623,19 +1853,19 @@
             <a href="#data" class="nav-link"><i class="fas fa-database"></i> 数据更改</a>
             <a href="#tutorial" class="nav-link"><i class="fas fa-graduation-cap"></i> 数据教程</a>
             <a href="#disclaimer" class="nav-link"><i class="fas fa-exclamation-triangle"></i> 免责声明</a>
+            <a href="#team" class="nav-link"><i class="fas fa-users"></i> 开发团队</a>
+            <a href="#sponsors" class="nav-link"><i class="fas fa-handshake"></i> 赞助商</a>
         </nav>
         
         <button class="mobile-menu-btn">
             <i class="fas fa-bars"></i>
         </button>
     </header>
-
-    <!-- 主要内容区域 -->
+    
     <main class="main-content">
-        <!-- 栏目一：游戏与MOD -->
         <section id="games" class="section">
             <div class="section-header">
-                <div class="section-icon">
+                <div class="section-icon straight">
                     <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZItpeKLHvuIgQDQyHlnIbs3WXUhq_AACtyMAAnG8wVfygtAHRbG4ijgE.jpg" alt="游戏与MOD图标">
                 </div>
                 <div>
@@ -644,74 +1874,132 @@
                 </div>
             </div>
             
-            <!-- 电脑版SA-MP部署 -->
-            <div class="platform-card">
-                <div class="platform-title">
-                    <div class="platform-icon">
-                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGppeJhDyYUWq4BEVIo7qEqktoWngwACdyMAAnG8wVdgOjlhshO4VjgE.jpg" alt="PC版SA-MP">
+            <div class="platform-section">
+    
+                <!-- 电脑版SA-MP部署部分 -->
+                <div class="platform-card">
+                    <div class="platform-title">
+                        <div class="platform-icon">
+                            <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGppeJhDyYUWq4BEVIo7qEqktoWngwACdyMAAnG8wVdgOjlhshO4VjgE.jpg" alt="PC版SA-MP">
+                        </div>
+                        <h3>电脑版SA-MP部署</h3>
                     </div>
-                    <h3>电脑版SA-MP部署</h3>
-                </div>
-                
-                <div class="button-grid">
-                    <a href="http://www.zycdjz.com/zsadlsd.exe" class="download-btn">
-                        <i class="fas fa-download"></i> SA游戏本体(600MB)
-                    </a>
-                    <a href="http://www.zycdjz.com/samp-install.exe" class="download-btn secondary">
-                        <i class="fas fa-network-wired"></i> SA-MP联机数据包
-                    </a>
-                </div>
-                
-                <div class="separator" style="margin: 25px 0;"></div>
-                
-                <div>
-                    <h4 style="margin-bottom: 15px; color: #8c9eff;">MOD安装资源</h4>
+                    
                     <div class="button-grid">
-                        <a href="https://www.gtainside.com/en/news.php" class="download-btn">
-                            <i class="fas fa-external-link-alt"></i> GTAInside
+                        <a href="http://www.zycdjz.com/zsadlsd.exe" class="download-btn">
+                            <i class="fas fa-download"></i> SA游戏本体(600MB)
+                        </a>
+                        <a href="http://www.zycdjz.com/samp-install.exe" class="download-btn secondary">
+                            <i class="fas fa-network-wired"></i> SA-MP联机数据包
+                        </a>
+                        <a href="https://sa-mp.mp/" class="download-btn official" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> SA-MP官方通道
                         </a>
                     </div>
-                </div>
-            </div>
-            
-            <!-- 手机版Rn·SAMP -->
-            <div class="platform-card">
-                <div class="platform-title">
-                    <div class="platform-icon">
-                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGhpeJejvnjNsQt5X9hkaZuD0-TzUAACdSMAAnG8wVelEwmVVNg7sjgE.jpg" alt="Rn·SAMP">
+                    
+                    <!-- 直连服务器功能 -->
+                    <div class="server-direct-section">
+                        <div class="server-title">
+                            <i class="fas fa-server"></i>
+                            <h4>直连服务器</h4>
+                        </div>
+                        
+                        <div class="server-grid">
+                            <div class="server-input-group">
+                                <label class="server-label">
+                                    <i class="fas fa-globe"></i> 服务器IP地址
+                                </label>
+                                <input type="text" class="server-input" id="serverIp" placeholder="例如: 202.189.10.34" value="202.189.10.34">
+                            </div>
+                            
+                            <div class="server-input-group">
+                                <label class="server-label">
+                                    <i class="fas fa-plug"></i> 服务器端口
+                                </label>
+                                <input type="text" class="server-input" id="serverPort" placeholder="例如: 8888" value="8888">
+                            </div>
+                            
+                            <button class="server-launch-btn" id="launchServerBtn">
+                                <i class="fas fa-rocket"></i> 一键启动
+                            </button>
+                        </div>
+                        
+                        <div class="server-status" id="serverStatus"></div>
+                        
+                        <div class="server-tutorial">
+                            <h5><i class="fas fa-info-circle"></i> 使用教程</h5>
+                            <ol>
+                                <li>输入SAMP服务器IP，例如: 202.189.10.34:8888</li>
+                                <li>输入完IP端口后点击一键启动</li>
+                                <li>就可以在服务器里面好好的玩了</li>
+                            </ol>
+                            <div class="note">
+                                <i class="fas fa-exclamation-triangle"></i> 注意事项: 该功能仅限于电脑版SAMP，不适用于手机版Rn·SAMP
+                            </div>
+                        </div>
                     </div>
-                    <h3>手机版Rn·SAMP</h3>
+                    
+                    <!-- 调整分隔线间距为25px -->
+                    <div class="separator" style="margin: 25px 0;"></div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 15px; color: #8c9eff;">MOD安装资源</h4>
+                        <div class="button-grid">
+                            <a href="https://www.gtainside.com/en/news.php" class="download-btn">
+                                <i class="fas fa-external-link-alt"></i> GTAInside
+                            </a>
+                            <a href="https://libertycity.ru/" class="download-btn secondary">
+                                <i class="fas fa-external-link-alt"></i> LibertyCity
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="button-grid">
-                    <a href="https://samp.fun/" class="download-btn">
-                        <i class="fas fa-mobile-alt"></i> Rn·SAMP
-                    </a>
-                    <a href="https://imtt.dd.qq.com/sjy.00022/sjy.00004/16891/apk/FA8CB4BDD2DDC232893F7E11D49BA3F5.apk?fsname=%E7%AC%AC%E4%B8%89%E6%96%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E5%8C%85.apk" class="download-btn secondary">
-                        <i class="fas fa-download"></i> GTSAOOL
-                    </a>
-                    <a href="https://11.shuajizhijiaptdown.yaooya.cn/soft/Q4/TXDTool.apk?tk=zkTZlF2NhRWMxQWZwYWZ3kzM4cjNxcTM0MmNjdDNzADfu9Gf0VmbuEWaqlGa6lmahVHazx3N1cjN5QTO2cTM" class="download-btn secondary">
-                        <i class="fas fa-tools"></i> TXD Tool
-                    </a>
-                </div>
-                
-                <div class="warning-box">
-                    <h4><i class="fas fa-exclamation-circle"></i> 重要注意事项</h4>
-                    <p>GTSAOOL内部已有ImgTool可手动替换也可自动替换。使用TXD Tool的时候需要勾选无障碍。如果无法导入请给GTSAOOL打开文件和文档权限。</p>
+                <!-- 手机版Rn·SAMP部分 -->
+                <div class="platform-card">
+                    <div class="platform-title">
+                        <div class="platform-icon">
+                            <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZGhpeJejvnjNsQt5X9hkaZuD0-TzUAACdSMAAnG8wVelEwmVVNg7sjgE.jpg" alt="Rn·SAMP">
+                        </div>
+                        <h3>手机版Rn·SAMP</h3>
+                    </div>
+                    
+                    <div class="button-grid">
+                        <a href="https://samp.fun/" class="download-btn">
+                            <i class="fas fa-mobile-alt"></i> Rn·SAMP
+                        </a>
+                    </div>
+                    
+                    <!-- 调整分隔线间距为25px -->
+                    <div class="separator" style="margin: 25px 0;"></div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 15px; color: #8c9eff;">手机MOD部署</h4>
+                        <div class="button-grid">
+                            <a href="https://imtt.dd.qq.com/sjy.00022/sjy.00004/16891/apk/FA8CB4BDD2DDC232893F7E11D49BA3F5.apk?fsname=%E7%AC%AC%E4%B8%89%E6%96%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E5%8C%85.apk" class="download-btn secondary">
+                                <i class="fas fa-download"></i> GTSAOOL
+                            </a>
+                            <a href="https://11.shuajizhijiaptdown.yaooya.cn/soft/Q4/TXDTool.apk?tk=zkTZlF2NhRWMxQWZwYWZ3kzM4cjNxcTM0MmNjdDNzADfu9Gf0VmbuEWaqlGa6lmahVHazx3N1cjN5QTO2cTM" class="download-btn secondary">
+                                <i class="fas fa-tools"></i> TXD Tool
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <h4><i class="fas fa-exclamation-circle"></i> 重要注意事项</h4>
+                        <p>GTSAOOL内部已有ImgTool可手动替换也可自动替换。使用TXD Tool的时候需要勾选无障碍。如果无法导入请给GTSAOOL打开文件和文档权限。</p>
+                    </div>
                 </div>
             </div>
             
-            <!-- 服务器警告 -->
             <div class="warning-box" style="margin-top: 30px;">
                 <h4><i class="fas fa-ban"></i> 服务器使用规定</h4>
                 <p>服务器中禁止使用一切违规插件扰乱秩序，否则您的账号和IP地址可能会被封禁。请遵守服务器规则，共同维护良好的游戏环境。</p>
             </div>
         </section>
         
-        <!-- 分隔线 -->
         <div class="separator"></div>
         
-        <!-- 新增音乐栏目 -->
         <section id="music" class="music-section">
             <div class="section-header">
                 <div class="section-icon">
@@ -725,7 +2013,7 @@
             
             <div class="music-player-container">
                 <div class="music-info">
-                    <p>在GTA SA $ SA-MP游戏体验中，音乐是不可或缺的一部分。我们为您提供高质量的游戏音乐资源和音频转换工具，让您可以自定义游戏内的音频体验。</p>
+                    <p>在GTA SA ★ SA-MP游戏体验中，音乐是不可或缺的一部分。我们为您提供高质量的游戏音乐资源和音频转换工具，让您可以自定义游戏内的音频体验。</p>
                 </div>
                 
                 <div class="music-controls">
@@ -743,37 +2031,33 @@
             </div>
         </section>
         
-        <!-- 分隔线 -->
         <div class="separator"></div>
         
-        <!-- 栏目二：数据更改 -->
         <section id="data" class="section">
             <div class="section-header">
                 <div class="section-icon">
                     <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZIxpeKLb5wIFXNZZuFpDMuO7LMzqKAACuCMAAnG8wVd9AAFKKsai5h84BA.jpg" alt="车辆数据图标">
                 </div>
                 <div>
-                    <h2 class="section-title">GTA SA $ SA-MP 车辆数据系统</h2>
+                      <h2 class="section-title">GTA SA ★ SA-MP 车辆数据系统</h2>
                     <p class="section-subtitle">完整的车辆列表与数据参数调整中心</p>
                 </div>
             </div>
             
-            <!-- 车辆列表图 -->
             <h3 style="margin-bottom: 15px; color: #8c9eff;">GTA SA车辆列表图</h3>
             <div class="vehicle-image-container">
                 <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQZC9peJD2qVC6nN8DS-KVMKIq5fvxagACKSMAAnG8wVfjnhyD3dbJ1zgE.jpg" alt="GTA SA车辆列表">
             </div>
             
-            <!-- 车辆列表 -->
-            <h3 style="margin-top: 40px; margin-bottom: 15px; color: #8c9eff;">GTA SA $ SA-MP车辆列表名单</h3>
+            <h3 style="margin-top: 40px; margin-bottom: 15px; color: #8c9eff;">GTA SA ★ SA-MP车辆列表名单</h3>
             <div class="vehicle-list-container">
                 <div class="vehicle-list" id="vehicleList">
-                    <!-- 车辆列表将通过JavaScript动态生成 -->
+                 
                 </div>
             </div>
         </section>
         
-        <!-- 数据更改教程 -->
+       
         <section id="tutorial" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -833,7 +2117,7 @@
                     <strong>车辆的前后轮的抓地调整</strong> - 数值越接近于0，前轮抓地越差，过弯时由于前轮抓地小于后轮，则会发生推头撞墙等。数值越接近于1前轮抓地力越好，后轮越差，过弯时可实现甩尾漂移等操作
                 </div>
                 
-                <div class="data-parameter">
+                .data-parameter">
                     <span class="param-number">10</span>
                     <strong>车辆档位限制</strong> - 5为最高五档，1为最高一档。注意：最高只有五档，超过5档游戏会闪退
                 </div>
@@ -854,36 +2138,97 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 赞助信息部分 -->
-        <section class="sponsor-section">
-            <div class="sponsor-content">
-                <h3 class="sponsor-title">
-                    <i class="fas fa-heart" style="color:#ff4081;"></i> 
-                    特别鸣谢
-                </h3>
-                <div class="sponsor-text">
-                    本教程由 <strong style="color:#8c9eff;">Matt Mosgan</strong> 赞助，<strong style="color:#8c9eff;">Mexi Hottest</strong> 编写网页。
-                </div>
-                <p style="margin-top: 20px; color: var(--text-secondary); font-style: italic;">
-                    提前感谢所有为GTA SA $ SA-MP社区做出贡献的玩家！
-                </p>
-            </div>
-        </section>
-        
-        <!-- 免责声明 -->
+
         <section id="disclaimer" class="disclaimer">
             <h3><i class="fas fa-exclamation-triangle"></i> 免责声明</h3>
             <p>本网站仅提供游戏资源与数据参考信息。服务器禁止修改数据的情况下请勿擅自修改车辆参数，如因违规操作导致账号或IP被封禁，与本网页无关。请用户自觉遵守游戏规则，合理使用本平台提供的信息。</p>
         </section>
+        
+        <!-- 开发者团队部分 - 更新头像 -->
+        <section id="team" class="team-section">
+            <h2 class="team-title"><i class="fas fa-users"></i> 平台开发团队</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; font-size: 18px; color: #c5cae9;">专业的网页开发与平台维护团队</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQaS9pegAB_JL99D0t4b9SwqWNCdGFWCAAAsobAAImR9FXoYf5uDdREU84BA.jpg" alt="Mexi Hottest">
+                    </div>
+                    <h3 class="member-name">Mexi Hottest</h3>
+                    <div class="member-role">网页开发者 ★ 平台架构师</div>
+                    <p class="member-desc">
+                        本平台的创建者与主要开发者，专注于网页设计与用户体验优化。负责平台的架构设计、前端开发和功能实现，致力于为GTA SA社区提供优质的资源分享平台。我不是游戏或模组开发团队成员，只是网页开发者和内容分享者。
+                    </p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQaS9pegAB_JL99D0t4b9SwqWNCdGFWCAAAsobAAImR9FXoYf5uDdREU84BA.jpg" alt="UI/UX设计团队">
+                    </div>
+                    <h3 class="member-name">UI/UX设计团队</h3>
+                    <div class="member-role">视觉设计与用户体验</div>
+                    <p class="member-desc">
+                        负责平台的整体视觉设计和用户体验优化，确保界面美观、操作流畅，为用户提供舒适的浏览和使用体验。
+                    </p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <img src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEQaS9pegAB_JL99D0t4b9SwqWNCdGFWCAAAsobAAImR9FXoYf5uDdREU84BA.jpg" alt="技术支持团队">
+                    </div>
+                    <h3 class="member-name">技术支持团队</h3>
+                    <div class="member-role">平台维护与技术支持</div>
+                    <p class="member-desc">
+                        负责平台的日常维护、技术支持和故障排除，确保平台稳定运行，及时解决用户遇到的问题。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 赞助商列表部分 -->
+        <section id="sponsors" class="sponsors-section">
+            <h2 class="sponsors-title"><i class="fas fa-handshake"></i> 赞助商列表</h2>
+            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; font-size: 18px; color: #c5cae9;">感谢以下赞助商对本平台的大力支持</p>
+            
+            <div class="sponsors-grid">
+                <div class="sponsor-item">
+                    <div class="sponsor-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="sponsor-name">Matt Mosgan</h3>
+                    <p class="sponsor-desc">
+                        主要赞助商，为平台的内容提供了重要贡献。感谢Matt Mosgan对GTA SA社区的贡献。
+                    </p>
+                </div>
+                
+                <div class="sponsor-item">
+                    <div class="sponsor-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="sponsor-name">社区贡献者</h3>
+                    <p class="sponsor-desc">
+                        感谢所有为GTA SA ★ SA-MP社区做出贡献的玩家，你们的反馈和建议是平台持续改进的动力。
+                    </p>
+                </div>
+                
+                <div class="sponsor-item">
+                    <div class="sponsor-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="sponsor-name">即将开放</h3>
+                    <p class="sponsor-desc">
+                        赞助位置虚位以待，欢迎热爱GTA SA社区的组织或个人加入我们，共同推动平台发展。
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- 页脚 -->
+    
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>企业平台</h3>
-                <p>专业级的GTA SA $ SA-MP游戏资源与数据管理中心，提供最全面的游戏部署、MOD安装和车辆数据调整方案。</p> 
+                <p>专业级的GTA SA ★ SA-MP游戏资源与数据管理中心，提供最全面的游戏部署、MOD安装和车辆数据调整方案。</p> 
                 <p>如有人有优质内容想上传至网页请向站主Mexi Hottest反馈我们将整合后采用并感谢为社区做贡献的玩家😊</p>
                 <div style="margin-top: 20px; display: flex; gap: 15px;">
                     <a href="#" style="color: #8c9eff; font-size: 20px;"><i class="fab fa-discord"></i></a>
@@ -900,6 +2245,8 @@
                     <li><a href="#data"><i class="fas fa-chevron-right"></i> 车辆数据</a></li>
                     <li><a href="#tutorial"><i class="fas fa-chevron-right"></i> 数据教程</a></li>
                     <li><a href="#disclaimer"><i class="fas fa-chevron-right"></i> 免责声明</a></li>
+                    <li><a href="#team"><i class="fas fa-chevron-right"></i> 开发团队</a></li>
+                    <li><a href="#sponsors"><i class="fas fa-chevron-right"></i> 赞助商</a></li>
                 </ul>
             </div>
             
@@ -910,12 +2257,24 @@
                     <li><a href="https://samp.fun/"><i class="fas fa-external-link-alt"></i> Rn·SAMP</a></li>
                     <li><a href="http://www.zycdjz.com/"><i class="fas fa-external-link-alt"></i> 游戏资源站</a></li>
                 </ul>
+                
+                <!-- 新增：联系我们部分 -->
+                <div class="contact-section">
+                    <h4 class="contact-title"><i class="fas fa-envelope"></i> 联系我们</h4>
+                    <div class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:3830106670@qq.com">站长邮箱: 3830106670@qq.com</a>
+                    </div>
+                    <div class="contact-note">
+                        联系我们可以反馈网站问题，或者上传优质内容。
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="copyright">
             <p>&copy; 2025 GTA SA 企业平台. 本网站与Rockstar Games无关，所有游戏资源版权归其各自所有者所有。</p>
-            <p>最后更新:2025-01-27 平台版本:V1.0</p>
+            <p>最后更新:2025-01-27 平台版本:V1.1</p>
         </div>
     </footer>
 
@@ -924,8 +2283,7 @@
         const vehicles = [
             "400 Landstalker", "401 Bravura", "402 Buffalo", "403 Linerunner", "404 Perenniel",
             "405 Sentinel", "406 Dumper（特殊车辆，无法正常驾驶）", "407 Firetruck", "408 Trashmaster",
-            "409 Stretch", "410 Manana", "411 Infernus", "412 Voodoo", "413 Pony", "414 Mule",
-            "415 Cheetah", "416 Ambulance", "417 Leviathan（直升机）", "418 Moonbeam", "419 Esperanto",
+            "409 Stretch", "410 Manana", "411 Infernus", "412 Voodoo", "413 Pony", "414 Mule","415 Cheetah", "416 Ambulance", "417 Leviathan（直升机）", "418 Moonbeam", "419 Esperanto",
             "420 Taxi", "421 Washington", "422 FBI Rancher", "423 Mr. Whoopee（冰淇淋车）", "424 BF Injection",
             "425 Hunter（军用直升机）", "426 Premier", "427 Enforcer（警用卡车）", "428 Securicar", "429 Banshee",
             "430 Predator（水上船只）", "431 Bus", "432 Rhino（坦克）", "433 Barracks OL（军用卡车）", "434 Hotknife",
@@ -933,8 +2291,7 @@
             "440 Rumpo", "441 RC Bandit（遥控车）", "442 Romero（灵车）", "443 Packer", "444 Monster","445 Admiral", "446 Patriot", "447 Sea Sparrow（水上直升机）", "448 Pizza Boy（摩托车）", "449 Tram（有轨电车）",
             "450 Articulated Trailer（货柜拖头，后段）", "451 Turismo", "452 Speeder（快艇）", "453 Reefer（渔船）", "454 Tropic（游艇）",
             "455 Flatbed", "456 Yankee", "457 Caddy（高尔夫球车）", "458 Solair", "459 Berkley's RC Van（RC商店货车，任务相关）",
-            "460 Skimmer（水上飞机）", "461 PCJ-600（摩托车）", "462 Faggio（摩托车）", "463 Freeway（摩托车）", "464 RC Baron（遥控飞机）",
-            "465 RC Raider（遥控直升机）", "466 Glendale", "467 Oceanic", "468 Sanchez（摩托车）", "469 Sparrow（直升机）",
+            "460 Skimmer（水上飞机）", "461 PCJ-600（摩托车）", "462 Faggio（摩托车）", "463 Freeway（摩托车）", "464 RC Baron（遥控飞机）","465 RC Raider（遥控直升机）", "466 Glendale", "467 Oceanic", "468 Sanchez（摩托车）", "469 Sparrow（直升机）",
             "470 Patriot（军用越野车，与446重复，实际为'Patriot'变体）", "471 Quad（四轮摩托车）", "472 Coastguard（快艇）", "473 Dinghy（小艇）", "474 Hermes",
             "475 Sabre", "476 Rustler（二战战斗机）", "477 ZR-350", "478 Walton", "479 Regina",
             "480 Comet", "481 BMX（自行车）", "482 Burrito", "483 Camper", "484 Marquis（帆船）",
@@ -948,8 +2305,7 @@
             "520 Hydra（垂直起降战斗机）", "521 FCR-900（摩托车）", "522 NRG-500（摩托车）", "523 HPV1000（警用摩托车）", "524 Cement Truck（水泥车）",
             "525 Tow Truck（拖车）", "526 Fortune", "527 Cadrona", "528 FBI Truck（防爆车）", "529 Willard",
             "530 Forklift（叉车）", "531 Tractor", "532 Combine Harvester（收割机）", "533 Feltzer", "534 Remington",
-            "535 Slamvan", "536 Blade", "537 Freight（火车头）", "538 Streak（火车车厢）", "539 Vortex（气垫船）",
-            "540 Vincent", "541 Bullet", "542 Clover", "543 Sadler", "544 Firetruck LA（消防车，云梯可操作）",
+            "535 Slamvan", "536 Blade", "537 Freight（火车头）", "538 Streak（火车车厢）", "539 Vortex（气垫船）","540 Vincent", "541 Bullet", "542 Clover", "543 Sadler", "544 Firetruck LA（消防车，云梯可操作）",
             "545 Hustler", "546 Intruder", "547 Primo", "548 Cargobob（军用运输直升机）", "549 Tampa",
             "550 Sunrise", "551 Merit", "552 Utility Van", "553 Nevada（双翼货运飞机）", "554 Yosemite",
             "555 Windsor", "556 Monster A（'Monster'变体）", "557 Monster B（'Monster'变体）", "558 Uranus", "559 Jester",
@@ -964,7 +2320,7 @@
             "603 Phoenix", "604 Glendale（变体）", "605 Sadler（变体）", "606 Sunrite（行李拖车，机场用）"
         ];
 
-        // 动态生成车辆列表
+        // 生成车辆列表
         function generateVehicleList() {
             const container = document.getElementById('vehicleList');
             container.innerHTML = '';
@@ -984,13 +2340,305 @@
                 container.appendChild(item);
             });
         }
+        
+        // 创建粒子背景
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = 80;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                
+                // 随机选择粒子类型
+                const random = Math.random();
+                if (random < 0.2) {
+                    particle.className = 'particle gold';
+                } else if (random < 0.4) {
+                    particle.className = 'particle green';
+                } else {
+                    particle.className = 'particle';
+                }
+                
+                // 随机位置
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // 随机大小
+                const size = Math.random() * 3 + 1;
+                
+                // 随机动画延迟
+                const delay = Math.random() * 15;
+                
+                // 随机动画持续时间
+                const duration = Math.random() * 10 + 15;
+                
+                particle.style.left = `${left}%`;
+                particle.style.top = `${top}%`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // 光标追踪特效
+        function initCursorFollower() {
+            const follower = document.getElementById('cursorFollower');
+            let mouseX = 0;
+            let mouseY = 0;
+            let followerX = 0;
+            let followerY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            function animate() {
+                // 缓动效果
+                followerX += (mouseX - followerX) * 0.1;
+                followerY += (mouseY - followerY) * 0.1;
+                
+                follower.style.left = `${followerX - 10}px`;
+                follower.style.top = `${followerY - 10}px`;
+                
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+            
+            // 鼠标点击效果
+            document.addEventListener('click', () => {
+                follower.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    follower.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+        
+        // 滚动动画效果
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('.section, .team-section, .sponsors-section, .disclaimer');
+            
+            function checkScroll() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.85) {
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // 初始设置
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // 初始检查
+        }
 
-        // 页面加载完成后执行
+        // 直连服务器功能 - 修复版（支持自定义IP端口）
+        function initServerConnection() {
+            const serverIp = document.getElementById('serverIp');
+            const serverPort = document.getElementById('serverPort');
+            const launchBtn = document.getElementById('launchServerBtn');
+            const statusDiv = document.getElementById('serverStatus');
+            
+            // 真实有效的SAMP服务器示例（仅供参考）
+            const sampleServers = [
+                { ip: "202.189.10.34", port: "8888", name: "大都会" },
+                { ip: "20.89.73.26", port: "7777", name: "自由城" },
+                { ip: "202.189.15.71", port: "7777", name: "迷你世界" },
+                { ip: "空缺待填", port: "空缺待填", name: "空缺服务器" }
+            ];
+            
+            // 设置默认服务器为第一个示例
+            serverIp.value = sampleServers[0].ip;
+            serverPort.value = sampleServers[0].port;
+            
+            // 一键启动按钮点击事件
+            launchBtn.addEventListener('click', function() {
+                const ip = serverIp.value.trim();
+                const port = serverPort.value.trim();
+                
+                // 验证输入
+                if (!ip || !port) {
+                    showStatus("请输入有效的IP地址和端口", "error");
+                    return;
+                }
+                
+                // IP地址验证（支持域名和IP）
+                const ipPattern = /^(\d{1,3}\.){3}\d{1,3}$|^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!ipPattern.test(ip)) {
+                    showStatus("IP地址或域名格式不正确", "error");
+                    return;
+                }
+                
+                // 端口验证
+                const portPattern = /^\d{1,5}$/;
+                if (!portPattern.test(port) || parseInt(port) > 65535) {
+                    showStatus("端口号格式不正确（1-65535）", "error");
+                    return;
+                }
+                
+                // 显示连接状态
+                showStatus(`正在启动SA-MP并连接到: ${ip}:${port}`, "connecting");
+                
+                // 使用samp://协议直接连接（这是SA-MP的标准连接方式）
+                setTimeout(() => {
+                    try {
+                        // 尝试使用samp://协议启动SA-MP
+                        window.location.href = `samp://${ip}:${port}`;
+                        
+                        // 如果协议处理失败，显示手动连接指南
+                        setTimeout(() => {
+                            showStatus(`连接指令已发送！<br>如果SA-MP没有自动启动：<br>1. 请确保已安装SA-MP客户端<br>2. 手动打开SA-MP<br>3. 点击"连接到IP"<br>4. 输入: ${ip}:${port}`, "connected");
+                        }, 1500);
+                    } catch (error) {
+                        // 如果发生错误，显示手动连接指南
+                        showStatus(`无法自动启动SA-MP<br>请手动连接：<br>1. 打开SA-MP客户端<br>2. 点击"添加服务器"<br>3. 输入地址: ${ip}:${port}<br>4. 点击"连接"`, "connected");
+                    }
+                }, 1000);
+            });
+            
+            function showStatus(message, type) {
+                statusDiv.innerHTML = `<i class="fas ${type === 'connecting' ? 'fa-spinner' : type === 'connected' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+                statusDiv.className = `server-status ${type}`;
+                
+                // 自动隐藏状态信息（连接中状态不自动隐藏）
+                if (type !== "connecting") {
+                    setTimeout(() => {
+                        statusDiv.style.opacity = '0';
+                        setTimeout(() => {
+                            statusDiv.className = 'server-status';
+                            statusDiv.style.opacity = '1';
+                        }, 500);
+                    }, 8000);
+                }
+            }
+            
+            // 输入框焦点效果
+            [serverIp, serverPort].forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.boxShadow = '0 0 20px rgba(76, 175, 80, 0.5)';
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.boxShadow = '';
+                    this.style.transform = '';
+                });
+                
+                // 输入时动态效果
+                input.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '#4CAF50';
+                        this.style.boxShadow = '0 0 10px rgba(76, 175, 80, 0.3)';
+                    } else {
+                        this.style.borderColor = 'rgba(76, 175, 80, 0.4)';
+                        this.style.boxShadow = '';
+                    }
+                });
+            });
+            
+            // 添加快速服务器选择功能
+            const serverSelector = document.createElement('div');
+            serverSelector.className = 'server-selector';
+            serverSelector.style.marginTop = '10px';
+            serverSelector.style.display = 'flex';
+            serverSelector.style.gap = '10px';
+            serverSelector.style.flexWrap = 'wrap';
+            
+            sampleServers.forEach(server => {
+                const serverBtn = document.createElement('button');
+                serverBtn.className = 'download-btn secondary';
+                serverBtn.style.padding = '8px 12px';
+                serverBtn.style.fontSize = '12px';
+                serverBtn.innerHTML = `<i class="fas fa-bolt"></i> ${server.name}`;
+                serverBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    serverIp.value = server.ip;
+                    serverPort.value = server.port;
+                    
+                    // 显示选中效果
+                    this.style.background = 'linear-gradient(to right, #4CAF50, #2E7D32)';
+                    this.style.color = 'white';
+                    
+                    // 重置其他按钮
+                    serverSelector.querySelectorAll('button').forEach(btn => {
+                        if (btn !== this) {
+                            btn.style.background = '';
+                            btn.style.color = '';
+                        }
+                    });
+                    
+                    // 显示提示
+                    showStatus(`已选择服务器: ${server.name} (${server.ip}:${server.port})`, "connected");
+                });
+                serverSelector.appendChild(serverBtn);
+            });
+            
+            // 将服务器选择器插入到教程上方
+            const tutorial = document.querySelector('.server-tutorial');
+            tutorial.parentNode.insertBefore(serverSelector, tutorial);
+        }
+
+        // 页面加载动画 - 两阶段动画
+        function initPageLoader() {
+            const loader = document.getElementById('pageLoader');
+            const stage1Logo = document.getElementById('stage1Logo');
+            const stage1Text = document.getElementById('stage1Text');
+            const stage2Logo = document.getElementById('stage2Logo');
+            const stage2Text = document.getElementById('stage2Text');
+            
+            // 第一阶段：显示GTA SA
+            setTimeout(() => {
+                // 第二阶段：切换到Rockstar Games
+                stage1Logo.style.display = 'none';
+                stage1Text.style.display = 'none';
+                stage2Logo.style.display = 'block';
+                stage2Text.style.display = 'block';
+                
+                // 第二阶段完成后，淡出加载界面
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    
+                    // 初始化其他效果
+                    createParticles();
+                    initCursorFollower();
+                    initScrollAnimations();
+                    initServerConnection();
+                    
+                    // 页面显示后的微动效果
+                    setTimeout(() => {
+                        document.querySelectorAll('.section, .team-section, .sponsors-section').forEach((section, index) => {
+                            setTimeout(() => {
+                                section.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }, 300);
+                }, 2000);
+            }, 2000);
+        }
+        
+        // 初始化所有功能
         document.addEventListener('DOMContentLoaded', function() {
             // 生成车辆列表
             generateVehicleList();
             
-            // 平滑滚动
+            // 初始化页面加载动画
+            initPageLoader();
+            
+            // 平滑滚动导航
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1013,7 +2661,7 @@
                     }
                 });
             });
-            
+
             // 移动端菜单
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
@@ -1023,7 +2671,7 @@
                     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
                 });
                 
-                // 调整移动端菜单显示
+                // 窗口大小变化时调整菜单
                 window.addEventListener('resize', function() {
                     if(window.innerWidth > 992) {
                         navLinks.style.display = 'flex';
@@ -1033,27 +2681,176 @@
                 });
             }
             
-            // 初始化显示
+            // 初始移动端菜单状态
             if(window.innerWidth <= 992) {
                 navLinks.style.display = 'none';
             }
             
-            // 添加动态效果到下载按钮
-            document.querySelectorAll('.download-btn, .music-btn').forEach(btn => {
+            // 按钮点击效果
+            document.querySelectorAll('.download-btn, .music-btn, .server-launch-btn').forEach(btn => {
                 btn.addEventListener('click', function(e) {
-                    // 如果不是外部链接，阻止默认行为
-                    if(this.getAttribute('href').startsWith('#')) {
+                    // 如果是页面内链接，不阻止默认行为
+                    if(this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
                         e.preventDefault();
                     }
                     
-                    // 添加点击动画
+                    // 点击动画
                     this.style.transform = 'scale(0.95)';
                     setTimeout(() => {
                         this.style.transform = '';
                     }, 200);
                 });
             });
+
+            // 卡片悬停效果增强
+            document.querySelectorAll('.platform-card, .team-member, .sponsor-item, .contact-email').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 添加额外的悬浮效果
+            document.querySelectorAll('.section-title, .member-name, .sponsor-name, .contact-title').forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.textShadow = '0 5px 15px rgba(140, 158, 255, 0.5)';
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.textShadow = '';
+                });
+            });
+            
+            // 添加页面滚动时的视差效果
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                document.querySelector('.particles').style.transform = `translateY(${rate}px)`;
+            });
+            
+            // 邮箱点击效果
+            const emailLink = document.querySelector('.contact-email a');
+            if (emailLink) {
+                emailLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 复制邮箱到剪贴板
+                    const email = '3830106670@qq.com';
+                    navigator.clipboard.writeText(email).then(() => {
+                        const originalText = this.textContent;
+                        this.innerHTML = '<i class="fas fa-check"></i> 邮箱已复制';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                    }).catch(() => {
+                        // 如果复制失败，直接打开邮件客户端
+                        window.location.href = `mailto:${email}`;
+                    });
+                });
+            }
         });
+
+        // 添加CSS动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .vehicle-item {
+                animation: fadeInUp 0.5s ease forwards;
+                opacity: 0;
+            }
+            
+            /* 额外的动态特效 */
+            @keyframes gentleFloat {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-5px); }
+            }
+            
+            .logo-icon {
+                animation: gentleFloat 4s ease-in-out infinite;
+            }
+            
+            .platform-icon {
+                animation: gentleFloat 3s ease-in-out infinite;
+                animation-delay: 0.5s;
+            }
+            
+            .member-avatar {
+                animation: gentleFloat 5s ease-in-out infinite;
+                animation-delay: 1s;
+            }
+            
+            .sponsor-icon {
+                animation: gentleFloat 4s ease-in-out infinite;
+                animation-delay: 1.5s;
+            }
+            
+            /* 文字闪烁效果 */
+            @keyframes textShine {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.8; }
+            }
+            
+            .section-title:hover, .member-name:hover, .sponsor-name:hover, .contact-title:hover {
+                animation: textShine 1s ease-in-out;
+            }
+            
+            /* 按钮呼吸效果 */
+            @keyframes buttonBreath {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.02); }
+            }
+            
+            .download-btn:hover, .music-btn:hover, .server-launch-btn:hover {
+                animation: buttonBreath 1s ease-in-out;
+            }
+            
+            /* 输入框发光效果 */
+            @keyframes inputGlow {
+                0%, 100% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); }
+                50% { box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+            }
+            
+            .server-input:focus {
+                animation: inputGlow 2s infinite alternate;
+            }
+            
+            /* 开发者头像特殊效果 */
+            @keyframes developerShine {
+                0% { filter: brightness(1) saturate(1); }
+                50% { filter: brightness(1.2) saturate(1.3); }
+                100% { filter: brightness(1) saturate(1); }
+            }
+            
+            .team-member:first-child .member-avatar img {
+                animation: developerShine 3s infinite;
+            }
+            
+            /* 服务器选择器按钮样式 */
+            .server-selector {
+                margin-top: 15px !important;
+                padding: 10px;
+                background: rgba(26, 35, 126, 0.3);
+                border-radius: 8px;
+                border: 1px solid rgba(76, 175, 80, 0.3);
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
